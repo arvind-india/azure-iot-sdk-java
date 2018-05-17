@@ -18,9 +18,11 @@ import java.util.EnumSet;
 
 public class SampleUtils
 {
-    public static final String iotHubConnectionString = "[IoT hub connection string goes here]";
+    public static final String iotHubConnectionString = "HostName=jasminel-h1.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=5ZCAX6gtqnggHBsnhLBqIozJ/GwmV+mFu2dHAnF3hvY=";
     public static final String storageConnectionString = "[Sample storage connection string goes here]";
-    public static final String deviceId = "[Device Id goes here]";
+    public static final String deviceId = "deviceM";
+    public static final String moduleId0 = "m0";
+    public static final String moduleId1 = "m1";
     public static final String exportFileLocation = "[Insert local folder here - something like C:\\foldername\\]";
 
     public static String getContainerSasUri(CloudBlobContainer container) throws InvalidKeyException, StorageException

@@ -29,17 +29,17 @@ public class DeviceManagerSample
         AddDevice();
         System.out.println("Add Device finished");
 
-        System.out.println("Get Device started");
-        GetDevice();
-        System.out.println("Get Device finished");
-        
-        System.out.println("Update Device started");
-        UpdateDevice();
-        System.out.println("Update Device finished");
-        
-        System.out.println("Remove Device started");
-        RemoveDevice();
-        System.out.println("Remove Device finished");
+//        System.out.println("Get Device started");
+//        GetDevice();
+//        System.out.println("Get Device finished");
+//
+//        System.out.println("Update Device started");
+//        UpdateDevice();
+//        System.out.println("Update Device finished");
+//
+//        System.out.println("Remove Device started");
+//        RemoveDevice();
+//        System.out.println("Remove Device finished");
         
         System.out.println("Shutting down sample...");
     }
