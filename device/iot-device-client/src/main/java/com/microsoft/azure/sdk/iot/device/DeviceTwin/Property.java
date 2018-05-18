@@ -21,12 +21,12 @@ public class Property
              */
             throw new IllegalArgumentException("Key cannot be null or empty");
         }
-        if (key.contains(" ") || key.contains("$") || key.contains("."))
+        if (key.contains(" ") || key.contains("$") || key.contains(".") || key.contains("#"))
         {
             /*
-            **Codes_SRS_Property_25_006: [**If the key contains illegal unicode control characters i.e ' ', '.', '$', the constructor shall throw an IllegalArgumentException.**]**
+            **Codes_SRS_Property_25_006: [**If the key contains illegal unicode control characters i.e ' ', '.', '$', '#', the constructor shall throw an IllegalArgumentException.**]**
              */
-            throw new IllegalArgumentException("Key cannot contain illegal unicode control characters '.', '$', ' '");
+            throw new IllegalArgumentException("Key cannot contain illegal unicode control characters '.', '$', ' ', '#'");
         }
         /*
         **Codes_SRS_Property_25_001: [**The constructor shall save the key and value representing this property.**]**

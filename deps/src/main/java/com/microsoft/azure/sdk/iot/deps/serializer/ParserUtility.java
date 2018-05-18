@@ -170,10 +170,10 @@ public class ParserUtility
             throw new IllegalArgumentException("The provided key is bigger than 128 characters");
         }
 
-        /* Codes_SRS_PARSER_UTILITY_21_017: [The validateKey shall throw IllegalArgumentException if the provided string contains an illegal character (`$`,`.`, space).] */
+        /* Codes_SRS_PARSER_UTILITY_21_017: [The validateKey shall throw IllegalArgumentException if the provided string contains an illegal character (`$`,`.`, space, #).] */
         /* Codes_SRS_PARSER_UTILITY_21_018: [If `isMetadata` is `true`, the validateKey shall accept the character `$` as valid.] */
         /* Codes_SRS_PARSER_UTILITY_21_019: [If `isMetadata` is `false`, the validateKey shall not accept the character `$` as valid.] */
-        if((key.contains(".") || key.contains(" ") || (key.contains("$") && ! isMetadata)))
+        if((key.contains(".") || key.contains(" ") || (key.contains("$")  || (key.contains("#")) && ! isMetadata)))
         {
             throw new IllegalArgumentException("The provided key is not valid");
         }

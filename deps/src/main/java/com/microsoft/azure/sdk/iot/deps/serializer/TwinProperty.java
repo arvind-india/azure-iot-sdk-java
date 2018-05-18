@@ -88,7 +88,7 @@ public class TwinProperty
             /* Codes_SRS_TWINPARSER_21_081: [If any `key` is more than 128 characters long, the updateReportedProperty shall throw IllegalArgumentException.] */
             throw new IllegalArgumentException("Property key is too big for json");
         }
-        if(key.contains(".") || key.contains(" ") || key.contains("$") )
+        if(key.contains(".") || key.contains(" ") || key.contains("$") || key.contains("#"))
         {
             /* Codes_SRS_TWINPARSER_21_076: [If any `key` has an illegal character, the updateDesiredProperty shall throw IllegalArgumentException.] */
             /* Codes_SRS_TWINPARSER_21_082: [If any `key` has an illegal character, the updateReportedProperty shall throw IllegalArgumentException.] */

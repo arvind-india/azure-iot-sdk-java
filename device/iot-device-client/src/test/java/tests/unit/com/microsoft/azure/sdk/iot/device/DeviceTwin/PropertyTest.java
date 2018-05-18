@@ -76,7 +76,6 @@ public class PropertyTest
     {
         //act
         Property testProp = new Property("Key with space", 1);
-
     }
 
     @Test (expected = IllegalArgumentException.class)
@@ -84,7 +83,6 @@ public class PropertyTest
     {
         //act
         Property testProp = new Property("KeyWith$", 1);
-
     }
 
     @Test (expected = IllegalArgumentException.class)
@@ -92,7 +90,6 @@ public class PropertyTest
     {
         //act
         Property testProp = new Property("KKeyWith.", 1);
-
     }
 
     @Test (expected = IllegalArgumentException.class)
@@ -100,7 +97,13 @@ public class PropertyTest
     {
         //act
         Property testProp = new Property("", 1);
+    }
 
+    @Test (expected = IllegalArgumentException.class)
+    public void constructorThrowsOnInvalidKey_pound()
+    {
+        //act
+        Property testProp = new Property("#", 1);
     }
 
     @Test (expected = IllegalArgumentException.class)

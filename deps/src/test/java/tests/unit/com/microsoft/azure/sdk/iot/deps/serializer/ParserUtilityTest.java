@@ -326,7 +326,7 @@ public class ParserUtilityTest
         Deencapsulation.invoke(Class.forName("com.microsoft.azure.sdk.iot.deps.serializer.ParserUtility"),"validateKey", key, false);
     }
 
-    /* Tests_SRS_PARSER_UTILITY_21_017: [The validateKey shall throw IllegalArgumentException if the provided string contains an illegal character (`$`,`.`, space).] */
+    /* Tests_SRS_PARSER_UTILITY_21_017: [The validateKey shall throw IllegalArgumentException if the provided string contains an illegal character (`$`,`.`, space, #).] */
     @Test (expected = IllegalArgumentException.class)
     public void validateKeyInvalidDotThrows() throws ClassNotFoundException
     {
@@ -334,7 +334,7 @@ public class ParserUtilityTest
         Deencapsulation.invoke(Class.forName("com.microsoft.azure.sdk.iot.deps.serializer.ParserUtility"),"validateKey", "test.key", false);
     }
 
-    /* Tests_SRS_PARSER_UTILITY_21_017: [The validateKey shall throw IllegalArgumentException if the provided string contains an illegal character (`$`,`.`, space).] */
+    /* Tests_SRS_PARSER_UTILITY_21_017: [The validateKey shall throw IllegalArgumentException if the provided string contains an illegal character (`$`,`.`, space, #).] */
     @Test (expected = IllegalArgumentException.class)
     public void validateKeyInvalidSpaceThrows() throws ClassNotFoundException
     {
@@ -342,13 +342,22 @@ public class ParserUtilityTest
         Deencapsulation.invoke(Class.forName("com.microsoft.azure.sdk.iot.deps.serializer.ParserUtility"),"validateKey", "test key", false);
     }
 
-    /* Tests_SRS_PARSER_UTILITY_21_017: [The validateKey shall throw IllegalArgumentException if the provided string contains an illegal character (`$`,`.`, space).] */
+    /* Tests_SRS_PARSER_UTILITY_21_017: [The validateKey shall throw IllegalArgumentException if the provided string contains an illegal character (`$`,`.`, space, #).] */
     /* Tests_SRS_PARSER_UTILITY_21_019: [If `isMetadata` is `false`, the validateKey shall not accept the character `$` as valid.] */
     @Test (expected = IllegalArgumentException.class)
     public void validateKeyNoDollarInvalidDollarThrows() throws ClassNotFoundException
     {
         // act
         Deencapsulation.invoke(Class.forName("com.microsoft.azure.sdk.iot.deps.serializer.ParserUtility"),"validateKey", "$test-key", false);
+    }
+
+    /* Tests_SRS_PARSER_UTILITY_21_017: [The validateKey shall throw IllegalArgumentException if the provided string contains an illegal character (`$`,`.`, space, #).] */
+    /* Tests_SRS_PARSER_UTILITY_21_019: [If `isMetadata` is `false`, the validateKey shall not accept the character `$` as valid.] */
+    @Test (expected = IllegalArgumentException.class)
+    public void validateKeyNoDollarInvalidPoundThrows() throws ClassNotFoundException
+    {
+        // act
+        Deencapsulation.invoke(Class.forName("com.microsoft.azure.sdk.iot.deps.serializer.ParserUtility"),"validateKey", "#test-key", false);
     }
 
     /* Tests_SRS_PARSER_UTILITY_21_046: [The validateMap shall throws IllegalArgumentException if the maxLevel is `0` or negative.] */

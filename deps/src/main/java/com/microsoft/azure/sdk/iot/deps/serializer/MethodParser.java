@@ -405,9 +405,9 @@ public class MethodParser
             throw new IllegalArgumentException("Key cannot be longer than 128 characters");
         }
 
-        if(key.contains("$") || key.contains(".") ||key.contains(" "))
+        if(key.contains("$") || key.contains(".") ||key.contains(" ") || key.contains("#"))
         {
-            throw new IllegalArgumentException("Key cannot contain \'$\', \'.\', or space");
+            throw new IllegalArgumentException("Key cannot contain \'$\', \'.\', \'#\', or space");
         }
     }
 
